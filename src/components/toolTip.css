@@ -1,0 +1,35 @@
+.tooltip {
+  --sharp-dark: rgba(27, 27, 27, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  background-color: var(--sharp-dark);
+  color: #fff;
+  max-width: 200px;
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+  transition: opacity 0.5s ease-in;
+  transform: translate(0, -140px);
+}
+
+.tooltip:hover::after {
+  display: inline-block;
+}
+
+.tooltip::after {
+  --sharp-dark: rgba(27, 27, 27, 0.9);
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border: 5px solid transparent;
+  bottom: -10px;
+  border-top-color: var(--sharp-dark);
+  left: 30%;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
